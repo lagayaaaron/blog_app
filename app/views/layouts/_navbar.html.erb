@@ -1,0 +1,28 @@
+<!-- app/views/layouts/_navbar.html.erb -->
+
+<div class="text-white bg-gray-800">
+  <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile menu button (if needed) -->
+      </div>
+      <div class="flex items-center justify-center flex-1 sm:items-stretch sm:justify-start">
+        <div class="flex-shrink-0 text-2xl font-semibold">Home</div>
+      </div>
+      <div class="flex space-x-4">
+        <!-- Show links only if user is signed in -->
+        <% if user_signed_in? %>
+          <!-- Edit User Link -->
+          <%= link_to "Edit User", edit_user_registration_path, class: "text-blue-300 hover:text-blue-500 font-semibold" %>
+
+          <!-- Logout Link -->
+          <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-red-300 hover:text-red-500 font-semibold" %>
+        <% else %>
+          <!-- Login and Sign-up Links (if needed for guests) -->
+          <%= link_to "Login", new_user_session_path, class: "text-blue-300 hover:text-blue-500 font-semibold" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "text-green-300 hover:text-green-500 font-semibold" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

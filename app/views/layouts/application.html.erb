@@ -19,8 +19,9 @@
   </head>
 
   <body class="bg-gray-50">
+    <%= render 'layouts/navbar' %> <!-- Navbar -->
     <!-- Notifications -->
-    <div class="fixed top-0 left-0 right-0 z-50 p-4">
+    <div class="fixed left-0 right-0 z-50 p-4">
       <p class="px-4 py-2 text-green-800 bg-green-100 rounded-md notice" style="<%= 'display:none;' if notice.blank? %>"> <%= notice %> </p>
       <p class="px-4 py-2 text-red-800 bg-red-100 rounded-md alert" style="<%= 'display:none;' if alert.blank? %>"> <%= alert %> </p>
     </div>
