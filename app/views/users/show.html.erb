@@ -1,0 +1,28 @@
+<!-- app/views/users/show.html.erb -->
+
+<% content_for :title, "#{@user.email}'s Profile" %>
+
+<div class="w-full max-w-4xl p-6 mx-auto">
+  <h1 class="text-4xl font-bold">Welcome, <%= @user.email %>!</h1>
+
+  <!-- Display the user's posts -->
+  <div class="mt-6">
+    <h2 class="text-2xl font-semibold">Your Posts</h2>
+    
+    <% if @posts.any? %>
+      <div class="mt-4 space-y-4">
+        <% @posts.each do |post| %>
+          <div class="p-4 bg-white rounded-md shadow-sm">
+            <h3 class="text-xl font-semibold"><%= post.title %></h3>
+            <p class="mt-2 text-gray-700"><%= truncate(post.content, length: 150) %></p>
+            <p class="mt-4">
+              <%= link_to "Show", post_path(post), class: "text-blue-600 hover:text-blue-800" %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="mt-4 text-gray-600">You haven't created any posts yet.</p>
+    <% end %>
+  </div>
+</div>
