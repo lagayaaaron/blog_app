@@ -1,10 +1,8 @@
-<% content_for :title, "Editing post" %>
+<!-- app/views/posts/edit.html.erb -->
+<% content_for :title, "Edit Post" %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing post</h1>
+<div class="w-full max-w-4xl p-6 mx-auto">
+  <h1 class="text-4xl font-bold">Edit Post</h1>
 
-  <%= render "form", post: @post %>
-
-  <%= link_to "Show this post", @post, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to posts", posts_path, class: "ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <%= render 'form', post: @post %>
 </div>
