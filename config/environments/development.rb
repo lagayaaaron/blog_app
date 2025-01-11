@@ -43,6 +43,10 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
+  # Configures the Action Mailer to use the Letter Opener gem for email delivery in the development environment.
+  # This setting allows emails to be opened in the browser instead of being sent, which is useful for debugging.
+  config.action_mailer.delivery_method = :letter_opener
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
